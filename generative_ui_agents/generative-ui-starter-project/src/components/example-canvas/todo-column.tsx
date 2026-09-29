@@ -56,7 +56,7 @@ export function TodoColumn({
             size="icon"
             onClick={onAddTodo}
             disabled={isAgentRunning}
-            aria-label="Add new todo"
+            aria-label="Přidat nový úkol"
           >
             <Plus className="h-4 w-4" />
           </Button>

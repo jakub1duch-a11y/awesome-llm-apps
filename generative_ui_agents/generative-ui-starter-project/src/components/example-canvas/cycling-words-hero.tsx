@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const WORDS = ["ORGANIZED", "EFFORTLESS", "FOCUSED", "DONE"];
+const WORDS = ["OCHLAZENÍ", "DESIGN", "INOVACE", "KOMFORT"];
 const DURATION_MS = 550;
 const INTERVAL_MS = 3000;
 const LETTER_DELAY = 0.045; // seconds per letter stagger
@@ -195,7 +195,7 @@ export function CyclingWordsHero() {
           height: 100%;
           min-height: 0;
           border-radius: 8px;
-          background: var(--cpk-ambient-gradient);
+          background: linear-gradient(135deg, #4a90c2 0%, #85ecce 50%, #b8e0f0 100%);
           position: relative;
           overflow: hidden;
         }
@@ -212,7 +212,7 @@ export function CyclingWordsHero() {
       `}</style>
 
       <div>
-        <p className="cwh-eyebrow">CopilotKit makes your tasks feel</p>
+        <p className="cwh-eyebrow">MLŽENÍ, KTERÉ DÁVÁ SMYSL</p>
         <span className="cwh-wrap" ref={wrapRef}>
           {WORDS.map((word, i) => (
             <span

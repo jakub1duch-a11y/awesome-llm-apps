@@ -32,7 +32,7 @@ export function ProgressGauge({ total, completed }: ProgressGaugeProps) {
     <div className="flex justify-center mb-8">
       <div
         className="relative w-full max-w-[340px] aspect-[5/4] rounded-[20px] overflow-hidden shadow-lg"
-        style={{ background: "var(--cpk-ambient-gradient)" }}
+        style={{ background: "linear-gradient(135deg, #4a90c2 0%, #85ecce 50%, #b8e0f0 100%)" }}
         role="img"
         aria-label={`${percentage} percent of tasks completed`}
       >
@@ -52,7 +52,7 @@ export function ProgressGauge({ total, completed }: ProgressGaugeProps) {
             className="text-[1.05rem] font-bold text-white tracking-[-0.01em] leading-none pt-1.5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Progress
+            Pokrok
           </span>
 
           {/* Progress ring */}
@@ -105,13 +105,13 @@ export function ProgressGauge({ total, completed }: ProgressGaugeProps) {
             className="text-[1.5rem] font-bold text-white m-0 mb-1 tracking-[-0.02em] leading-[1.1]"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Task Completion
+            Dokončené úkoly
           </h2>
           <p
             className="text-[0.85rem] font-normal text-white/65 m-0 mb-3.5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            {completed} / {total} tasks done
+            {completed} / {total} úkolů hotovo
           </p>
 
           <div className="flex items-center justify-between">
@@ -127,10 +127,10 @@ export function ProgressGauge({ total, completed }: ProgressGaugeProps) {
               style={{ fontFamily: "var(--font-body)" }}
             >
               {remaining > 0
-                ? `${remaining} left`
+                ? `${remaining} zbývá`
                 : total > 0
-                  ? "All done"
-                  : "No tasks"}
+                  ? "Vše hotovo"
+                  : "Žádné úkoly"}
               <span
                 className="inline-block ml-1.5 transition-transform duration-300"
                 style={{
