@@ -1,0 +1,13 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "OPENAI_API_KEY",
+      "description": "OpenAI API key for the LangGraph agent (used with gpt-5.5 model). Get it from https://platform.openai.com/api-keys",
+      "requiredAtBoot": true,
+      "generatedForDevelopment": true
+    }
+  ]
+}
