@@ -14,6 +14,49 @@ A multi-agent system built with Google ADK that analyzes photos of your space, c
 - **🤖 Multi-Agent Orchestration**: Demonstrates Coordinator/Dispatcher + Sequential Pipeline patterns
 - **✏️ Iterative Refinement**: Edit generated renderings based on feedback
 
+## Qdrant Overview
+
+Qdrant is a vector database and semantic search engine. You can use its REST API to build a production-ready service for storing, searching, and managing vectors with an additional payload.
+
+### How Qdrant works
+
+1. Create a collection to store your data.
+2. Upsert data points and enrich them with a custom payload.
+3. Run a search across the full collection to find relevant results.
+4. Snapshot, download, and restore collections when needed.
+5. Scale into a distributed setup for production workloads.
+
+### Quick start
+
+Try the development quickstart guide to get started locally.
+
+### Client libraries
+
+| Client | Repository | Installation |
+| --- | --- | --- |
+| Python | [qdrant-client](https://github.com/qdrant/qdrant-client) | `pip install qdrant-client` |
+| TypeScript | [qdrant-js](https://github.com/qdrant/qdrant-js) | `npm install @qdrant/js-client-rest` |
+| Rust | [rust-client](https://github.com/qdrant/rust-client) | `cargo add qdrant-client` |
+| Go | [go-client](https://github.com/qdrant/go-client) | `go get github.com/qdrant/go-client` |
+| .NET | [qdrant-dotnet](https://github.com/qdrant/qdrant-dotnet) | `dotnet add package Qdrant.Client` |
+| Java | [java-client](https://github.com/qdrant/java-client) | Available on Maven Central |
+
+### Example workflow
+
+```python
+from qdrant_client import QdrantClient
+from qdrant_client.models import Distance, VectorParams
+
+client = QdrantClient(url="http://localhost:6333")
+
+client.create_collection(
+    collection_name="renovation_ideas",
+    vectors_config=VectorParams(size=1536, distance=Distance.COSINE),
+)
+```
+
+This pattern is useful when you want to store design embeddings, retrieve similar renovation concepts, and combine semantic search with structured metadata.
+
 ## How It Works
 
 The system uses a **Coordinator/Dispatcher pattern** with three specialized agents:
