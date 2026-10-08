@@ -59,8 +59,8 @@ export function TodoList({ todos, onUpdate, isAgentRunning }: TodoListProps) {
   const addTodo = () => {
     const newTodo: Todo = {
       id: crypto.randomUUID(),
-      title: "New Todo",
-      description: "Add a description",
+      title: "Nový úkol",
+      description: "Přidat popis",
       emoji: "🎯",
       status: "pending",
     };
@@ -72,13 +72,13 @@ export function TodoList({ todos, onUpdate, isAgentRunning }: TodoListProps) {
       <div className="flex flex-col items-center justify-center h-full gap-4">
         <div className="text-5xl">✏️</div>
         <p className="text-base font-semibold text-[--foreground]">
-          No todos yet
+          Žádné úkoly
         </p>
         <p className="text-sm text-[--muted-foreground]">
-          Create your first task to get started
+          Vytvořte svůj první úkol
         </p>
         <Button onClick={addTodo} disabled={isAgentRunning} className="mt-2">
-          Add a task
+          Přidat úkol
         </Button>
       </div>
     );
@@ -87,9 +87,9 @@ export function TodoList({ todos, onUpdate, isAgentRunning }: TodoListProps) {
   return (
     <div className="flex gap-8 h-full">
       <TodoColumn
-        title="To Do"
+        title="K udělání"
         todos={pendingTodos}
-        emptyMessage="No pending todos"
+        emptyMessage="Žádné úkoly k udělání"
         showAddButton
         onAddTodo={addTodo}
         onToggleStatus={toggleStatus}
@@ -100,9 +100,9 @@ export function TodoList({ todos, onUpdate, isAgentRunning }: TodoListProps) {
         isAgentRunning={isAgentRunning}
       />
       <TodoColumn
-        title="Done"
+        title="Hotovo"
         todos={completedTodos}
-        emptyMessage="No completed todos yet"
+        emptyMessage="Žádné hotové úkoly"
         onToggleStatus={toggleStatus}
         onDelete={deleteTodo}
         onUpdateTitle={updateTitle}

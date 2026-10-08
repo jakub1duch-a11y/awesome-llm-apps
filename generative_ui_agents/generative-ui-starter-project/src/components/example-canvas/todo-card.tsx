@@ -90,7 +90,7 @@ export function TodoCard({
         size="icon"
         onClick={() => onDelete(todo)}
         className="absolute top-3 right-3 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
-        aria-label="Delete todo"
+        aria-label="Smazat úkol"
       >
         <X className="h-3.5 w-3.5" />
       </Button>
@@ -103,7 +103,7 @@ export function TodoCard({
             "block text-3xl leading-none cursor-pointer rounded-xl p-2 transition-colors",
             isCompleted ? "bg-[var(--muted)]" : "bg-[var(--secondary)]",
           )}
-          aria-label="Change emoji"
+          aria-label="Změnit emoji"
         >
           {todo.emoji}
         </button>
@@ -147,7 +147,7 @@ export function TodoCard({
               }}
               className="w-full text-base font-semibold focus:outline-none bg-transparent text-[var(--foreground)] border-b-2 border-[var(--primary)] pb-[2px]"
               autoFocus
-              aria-label="Edit todo title"
+              aria-label="Upravit název úkolu"
             />
           ) : (
             <div
@@ -175,7 +175,7 @@ export function TodoCard({
               className="w-full mt-1.5 text-sm leading-relaxed focus:outline-none resize-none bg-transparent text-[var(--muted-foreground)] border-b-2 border-[var(--primary)] pb-[2px]"
               rows={1}
               autoFocus
-              aria-label="Edit todo description"
+              aria-label="Upravit popis úkolu"
             />
           ) : (
             <p
